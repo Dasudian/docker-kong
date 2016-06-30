@@ -1,11 +1,14 @@
+cluster_listen: "0.0.0.0:7956"
+database: postgres
 postgres:
-  host: "kong-database"
+  host: 'postgres.db'
   port: 5432
   database: kong
   user: kong
+  password: kong
 cassandra:
   contact_points:
-    - "kong-database:9042"
+    - "cassandra.db:9042"
 nginx: |
   {{user}}
   worker_processes auto;
